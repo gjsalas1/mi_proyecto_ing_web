@@ -9,7 +9,7 @@
     --text: #edf3ff;
     --muted: #a5b4cc;
     --blue: #38a5ff;
-    --orange: #ff623e;
+    --orange: #7eff3e;
     --purple: #a78bfa;
     --green: #51e2b1;
     --border: rgba(169, 190, 225, 0.15);
@@ -304,7 +304,7 @@ section {
 
 .red { background: #ff6268; }
 .yellow { background: #ffca55; }
-.green { background: #45d69a; }
+.green { background: #1538e7; }
 
 .terminal-title {
     color: var(--muted);
@@ -401,7 +401,7 @@ section {
 
 .info-card:hover {
     transform: translateY(-7px);
-    border-color: rgba(56, 165, 255, 0.6);
+    border-color: rgba(148, 188, 221, 0.6);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
