@@ -1,4 +1,3 @@
-
 // ========================================
 // 1. MENÚ RESPONSIVE
 // ========================================
@@ -97,7 +96,8 @@ const consejos = [
     "Crea una rama nueva para desarrollar una funcionalidad sin modificar directamente la rama principal.",
     "Usa git pull para obtener e integrar los cambios remotos antes de continuar trabajando, cuando corresponda.",
     "Nunca compartas contraseñas, tokens ni claves privadas dentro de tu repositorio.",
-    "Escribe un archivo README.md para explicar qué hace tu proyecto y cómo ejecutarlo."
+    "Escribe un archivo README.md para explicar qué hace tu proyecto y cómo ejecutarlo.",
+    "Usa git log --oneline para ver el historial de commits de forma resumida."
 ];
 
 let ultimoConsejo = -1;
@@ -156,6 +156,22 @@ const preguntas = [
         ],
         correcta: 2,
         explicacion: "¡Excelente! Las ramas permiten desarrollar cambios sin afectar inmediatamente la rama principal."
+    },
+    {
+        pregunta: "¿Qué comando muestra el historial de commits?",
+        opciones: ["git log", "git add", "git init"],
+        correcta: 0,
+        explicacion: "¡Correcto! git log muestra la lista de commits con su autor, fecha y mensaje."
+    },
+    {
+        pregunta: "¿Para qué sirve el archivo .gitignore?",
+        opciones: [
+            "Para borrar el repositorio",
+            "Para indicar qué archivos NO debe subir Git",
+            "Para crear ramas nuevas"
+        ],
+        correcta: 1,
+        explicacion: "¡Muy bien! .gitignore evita que se suban archivos innecesarios o privados."
     }
 ];
 
