@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprende Git, GitHub y los comandos esenciales para desarrollar proyectos web.">
+    <title>Git & GitHub | Ingeniería Web</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#inicio" class="logo">
+            <span class="logo-icon">◆</span>
+            Git <span>&</span> GitHub
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Abrir menú" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="navMenu">
+            <a href="#inicio">Inicio</a>
+            <a href="#git">Git</a>
+            <a href="#github">GitHub</a>
+            <a href="#comandos">Comandos</a>
+            <a href="#flujo">Flujo de trabajo</a>
+        </nav>
+
+        <a class="btn btn-outline header-btn"
+           href="https://github.com/" target="_blank"
+           rel="noopener noreferrer">
+            Ver GitHub ↗
+        </a>
+    </header>
+
+    <main>
+        <!-- PORTADA -->
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <span class="etiqueta">INGENIERÍA WEB · GUÍA PARA PRINCIPIANTES</span>
+
+                <h1>Construye mejor con
+                    <span class="gradient-text">Git & GitHub</span>
+                </h1>
+
+                <p>
+                    Controla las versiones de tu código, guarda tus proyectos
+                    y colabora con desarrolladores de todo el mundo.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#git" class="btn btn-primary">Comenzar a aprender →</a>
+                    <a href="#comandos" class="btn btn-outline">Ver comandos</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div><strong>01</strong><span>Control de versiones</span></div>
+                    <div><strong>02</strong><span>Repositorios</span></div>
+                    <div><strong>03</strong><span>Colaboración</span></div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="glow glow-orange"></div>
+                <div class="glow glow-purple"></div>
+
+                <div class="code-card">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">mi-proyecto / terminal</span>
+                    </div>
+
+                    <div class="terminal-body">
+                        <p><span class="prompt">$</span> git init</p>
+                        <p class="terminal-comment">Repositorio inicializado</p>
+                        <p><span class="prompt">$</span> git add .</p>
+                        <p><span class="prompt">$</span> git commit -m "Mi primer commit"</p>
+                        <p><span class="prompt">$</span> git push</p>
+                        <p class="success">✓ Cambios listos para compartir</p>
+                    </div>
+                </div>
+
+                <div class="floating-tag tag-git">◆ Git</div>
+                <div class="floating-tag tag-github">● GitHub</div>
+            </div>
+        </section>
+
+        <!-- CONCEPTOS -->
+        <section class="section concepts" id="git">
+            <div class="section-heading">
+                <span class="eyebrow">LOS FUNDAMENTOS</span>
+                <h2>Dos herramientas, un gran equipo</h2>
+                <p>Conoce qué hace cada herramienta y por qué son tan importantes.</p>
+            </div>
+
+            <div class="cards-grid">
+                <article class="info-card git-card">
+                    <div class="card-icon orange-icon">◆</div>
+                    <span class="card-label">CONTROL DE VERSIONES</span>
+                    <h3>¿Qué es Git?</h3>
+                    <p>
+                        Git es un sistema de control de versiones distribuido.
+                        Permite registrar los cambios de tus archivos, recuperar
+                        versiones anteriores y trabajar con diferentes ramas.
+                    </p>
+                    <ul>
+                        <li>Historial de cambios</li>
+                        <li>Creación de ramas</li>
+                        <li>Trabajo sin conexión</li>
+                    </ul>
+                    <a href="https://git-scm.com/doc"
+                       target="_blank" rel="noopener noreferrer"
+                       class="text-link">Documentación oficial ↗</a>
+                </article>
+
+                <article class="info-card github-card" id="github">
+                    <div class="card-icon purple-icon">●</div>
+                    <span class="card-label">COLABORACIÓN EN LA NUBE</span>
+                    <h3>¿Qué es GitHub?</h3>
+                    <p>
+                        GitHub es una plataforma para alojar repositorios Git.
+                        Facilita compartir código, revisar cambios, gestionar
+                        proyectos y colaborar con otros desarrolladores.
+                    </p>
+                    <ul>
+                        <li>Repositorios remotos</li>
+                        <li>Pull requests</li>
+                        <li>Trabajo en equipo</li>
+                    </ul>
+                    <a href="https://docs.github.com/es"
+                       target="_blank" rel="noopener noreferrer"
+                       class="text-link">Documentación oficial ↗</a>
+                </article>
+            </div>
+
+            <div class="comparison">
+                <div>
+                    <strong>Git</strong>
+                    <p>Registra y administra las versiones de tu código.</p>
+                </div>
+                <div class="comparison-symbol">+</div>
+                <div>
+                    <strong>GitHub</strong>
+                    <p>Permite publicar repositorios y colaborar en línea.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMANDOS -->
+        <section class="section commands-section" id="comandos">
+            <div class="section-heading">
+                <span class="eyebrow">APRENDE PRACTICANDO</span>
+                <h2>Comandos básicos de Git</h2>
+                <p>Selecciona un comando y copia el código para probarlo en tu terminal.</p>
+            </div>
+
+            <div class="commands-layout">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">bash — comandos Git</span>
+                        <button id="copyAll" class="copy-btn">Copiar todo</button>
+                    </div>
+
+                    <div class="command-list">
+                        <div class="command-row">
+                            <code>git init</code>
+                            <span>Inicializa un repositorio</span>
+                            <button class="copy-btn" data-copy="git init">Copiar</button>
+                        </div>
+
+                        <div class="command-row">
+                            <code>git clone URL</code>
+                            <span>Clona un repositorio remoto</span>
+                            <button class="copy-btn" data-copy="git clone URL">Copiar</button>
+                        </div>
+
+                        <div class="command-row">
+                            <code>git status</code>
+                            <span>Muestra el estado de los archivos</span>
+                            <button class="copy-btn" data-copy="git status">Copiar</button>
+                        </div>
+
+                        <div class="command-row">
+                            <code>git add .</code>
+                            <span>Prepara los cambios para guardarlos</span>
+                            <button class="copy-btn" data-copy="git add .">Copiar</button>
+                        </div>
+
+                        <div class="command-row">
+                            <code>git commit -m "mensaje"</code>
+                            <span>Guarda una versión en el historial</span>
+                            <button class="copy-btn"
+                                data-copy='git commit -m "mensaje"'>Copiar</button>
+                        </div>
+
+                        <div class="command-row">
+                            <code>git pull</code>
+                            <span>Obtiene e integra cambios remotos</span>
+                            <button class="copy-btn" data-copy="git pull">Copiar</button>
+                        </div>
+
+                        <div class="command-row">
+                            <code>git push</code>
+                            <span>Publica tus commits en el remoto</span>
+                            <button class="copy-btn" data-copy="git push">Copiar</button>
+                        </div>
+                    </div>
+
+                    <p class="terminal-footer" id="copyMessage" aria-live="polite">
+                        $ Listo para trabajar
+                    </p>
+                </div>
+
+                <aside class="tip-card">
+                    <span class="tip-icon">✦</span>
+                    <h3>Consejo de desarrollador</h3>
+                    <p id="tipText">
+                        Realiza commits pequeños y utiliza mensajes claros
+                        para recordar qué cambiaste en cada versión.
+                    </p>
+                    <button class="btn btn-primary" id="newTip">
+                        Otro consejo ↻
+                    </button>
+                </aside>
+            </div>
+        </section>
+
+        <!-- FLUJO DE TRABAJO -->
+        <section class="section workflow-section" id="flujo">
+            <div class="section-heading">
+                <span class="eyebrow">DE PRINCIPIANTE A COLABORADOR</span>
+                <h2>Tu flujo de trabajo</h2>
+                <p>Estos son los pasos habituales para guardar y compartir cambios.</p>
+            </div>
+
+            <div class="workflow-grid">
+                <article class="step">
+                    <span class="step-number">01</span>
+                    <div class="step-icon">⌘</div>
+                    <h3>Clona o inicia</h3>
+                    <p>Prepara tu repositorio local con git clone o git init.</p>
+                </article>
+
+                <article class="step">
+                    <span class="step-number">02</span>
+                    <div class="step-icon">✎</div>
+                    <h3>Realiza cambios</h3>
+                    <p>Edita tus archivos y revisa el resultado con git status.</p>
+                </article>
+
+                <article class="step">
+                    <span class="step-number">03</span>
+                    <div class="step-icon">✓</div>
+                    <h3>Haz commit</h3>
+                    <p>Prepara los archivos con git add y registra los cambios.</p>
+                </article>
+
+                <article class="step">
+                    <span class="step-number">04</span>
+                    <div class="step-icon">↑</div>
+                    <h3>Haz push</h3>
+                    <p>Envía los commits al repositorio remoto en GitHub.</p>
+                </article>
+
+                <article class="step">
+                    <span class="step-number">05</span>
+                    <div class="step-icon">◎</div>
+                    <h3>Colabora</h3>
+                    <p>Comparte tu trabajo y propone cambios con pull requests.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- MINI CUESTIONARIO -->
+        <section class="section quiz-section" id="quiz">
+            <div class="quiz-card">
+                <span class="eyebrow">PON A PRUEBA LO APRENDIDO</span>
+                <h2>¿Cuánto sabes de Git?</h2>
+                <p class="quiz-question" id="quizQuestion">
+                    ¿Qué comando registra cambios en el historial de Git?
+                </p>
+
+                <div class="quiz-options" id="quizOptions">
+                    <button class="quiz-option" data-answer="0">git push</button>
+                    <button class="quiz-option" data-answer="1">git commit</button>
+                    <button class="quiz-option" data-answer="2">git clone</button>
+                </div>
+
+                <p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p>
+                <button id="nextQuestion" class="btn btn-primary" hidden>
+                    Siguiente pregunta →
+                </button>
+                <p class="quiz-score" id="quizScore">Puntuación: 0 / 0</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="#inicio" class="logo">Git <span>&</span> GitHub</a>
+        <p>Ingeniería Web · Aprender, construir y colaborar.</p>
+        <p class="footer-note">Desarrollado con HTML, CSS y JavaScript.</p>
+        <a href="https://github.com/" target="_blank"
+           rel="noopener noreferrer">Explora GitHub ↗</a>
+    </footer>
+
+</body>
+</html>

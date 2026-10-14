@@ -1,0 +1,896 @@
+
+/* ==================================
+   1. CONFIGURACIÓN GENERAL
+================================== */
+:root {
+    --bg: #080e1b;
+    --bg-soft: #0e1728;
+    --card: #111d31;
+    --text: #edf3ff;
+    --muted: #a5b4cc;
+    --blue: #38a5ff;
+    --orange: #ff623e;
+    --purple: #a78bfa;
+    --green: #51e2b1;
+    --border: rgba(169, 190, 225, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible, a:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 4px;
+}
+
+p {
+    color: var(--muted);
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+/* ==================================
+   2. BARRA DE NAVEGACIÓN
+================================== */
+.navbar {
+    min-height: 76px;
+    padding: 14px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: rgba(8, 14, 27, 0.94);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(16px);
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+.logo-icon {
+    color: var(--orange);
+    margin-right: 6px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 24px;
+}
+
+.navbar nav a {
+    color: var(--muted);
+    font-size: 0.92rem;
+    transition: color 0.25s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--blue);
+}
+
+.menu-toggle {
+    display: none;
+    color: var(--text);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+/* ==================================
+   3. BOTONES
+================================== */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 19px;
+    border-radius: 9px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s,
+                background 0.25s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background: linear-gradient(110deg, var(--blue), #7168ff);
+    color: white;
+    box-shadow: 0 5px 24px rgba(56, 165, 255, 0.15);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 8px 28px rgba(56, 165, 255, 0.32);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: rgba(56, 165, 255, 0.6);
+    color: var(--text);
+}
+
+.btn-outline:hover {
+    background: rgba(56, 165, 255, 0.1);
+}
+
+.header-btn {
+    font-size: 0.85rem;
+}
+
+/* ==================================
+   4. PORTADA PRINCIPAL
+================================== */
+.hero {
+    min-height: 520px;
+    padding: 90px 9%;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 55px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 5% 75%,
+            rgba(255, 98, 62, 0.12), transparent 40%),
+        radial-gradient(ellipse at 90% 10%,
+            rgba(106, 91, 255, 0.18), transparent 40%),
+        var(--bg);
+}
+
+.etiqueta, .eyebrow {
+    color: var(--blue);
+    font-size: 0.77rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.4rem);
+    line-height: 1.12;
+    margin: 20px 0;
+    letter-spacing: -2px;
+}
+
+.gradient-text {
+    display: block;
+    background: linear-gradient(90deg,
+        var(--orange), #ff9a70, var(--purple), var(--blue));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-content > p {
+    max-width: 550px;
+    font-size: 1.08rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 28px;
+}
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 45px;
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-stats strong {
+    font-size: 1.3rem;
+    color: var(--green);
+}
+
+.hero-stats span {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+/* Terminal decorativa de la portada */
+.hero-visual {
+    min-height: 310px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glow {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    filter: blur(85px);
+    opacity: 0.3;
+}
+
+.glow-orange {
+    background: var(--orange);
+    left: 0;
+    top: 10px;
+}
+
+.glow-purple {
+    background: #695cff;
+    right: 0;
+    bottom: 0;
+}
+
+.code-card {
+    width: 100%;
+    max-width: 490px;
+    position: relative;
+    z-index: 1;
+    background: rgba(14, 23, 40, 0.96);
+    border: 1px solid rgba(169, 190, 225, 0.24);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+    transform: rotate(1deg);
+    transition: transform 0.3s;
+}
+
+.code-card:hover {
+    transform: rotate(0deg) translateY(-5px);
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.red { background: #ff6268; }
+.yellow { background: #ffca55; }
+.green { background: #45d69a; }
+
+.terminal-title {
+    color: var(--muted);
+    font-size: 0.75rem;
+    margin-left: auto;
+}
+
+.terminal-body {
+    padding: 24px;
+    font: 0.9rem/2 "Consolas", monospace;
+    overflow-wrap: anywhere;
+}
+
+.prompt { color: var(--orange); }
+.terminal-comment { color: var(--muted); }
+.success { color: var(--green); margin-top: 8px; }
+
+.floating-tag {
+    position: absolute;
+    z-index: 2;
+    padding: 9px 17px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #15233a;
+    font-weight: 800;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+.tag-git {
+    color: var(--orange);
+    top: 5px;
+    right: 5px;
+}
+
+.tag-github {
+    color: var(--purple);
+    bottom: 3px;
+    left: 2px;
+}
+
+/* ==================================
+   5. SECCIONES Y TÍTULOS
+================================== */
+.section {
+    padding: 85px 9%;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 45px;
+}
+
+.section-heading h2,
+.quiz-card h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin: 10px 0;
+    line-height: 1.25;
+}
+
+.section-heading > p {
+    margin-top: 10px;
+}
+
+/* ==================================
+   6. TARJETAS DE GIT Y GITHUB
+================================== */
+.concepts {
+    background: #0b1322;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.info-card {
+    background: linear-gradient(145deg, #142137, #0e1728);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: transform 0.3s, border-color 0.3s,
+                box-shadow 0.3s;
+}
+
+.git-card {
+    border-top: 3px solid var(--orange);
+}
+
+.github-card {
+    border-top: 3px solid var(--purple);
+}
+
+.info-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(56, 165, 255, 0.6);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 53px;
+    height: 53px;
+    border-radius: 14px;
+    font-size: 1.7rem;
+    margin-bottom: 18px;
+}
+
+.orange-icon {
+    color: var(--orange);
+    background: rgba(255, 98, 62, 0.13);
+}
+
+.purple-icon {
+    color: var(--purple);
+    background: rgba(167, 139, 250, 0.14);
+}
+
+.card-label {
+    display: block;
+    color: var(--muted);
+    font-size: 0.7rem;
+    letter-spacing: 1.4px;
+    margin-bottom: 7px;
+}
+
+.info-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.info-card ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.info-card li {
+    color: #c8d4e8;
+    margin: 7px 0;
+}
+
+.info-card li::before {
+    content: "✓";
+    color: var(--green);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.text-link {
+    display: inline-block;
+    color: var(--blue);
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 24px;
+    margin-top: 28px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    text-align: center;
+}
+
+.comparison > div:not(.comparison-symbol) {
+    max-width: 300px;
+}
+
+.comparison strong {
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+.comparison-symbol {
+    color: var(--blue);
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+/* ==================================
+   7. COMANDOS INTERACTIVOS
+================================== */
+.commands-section {
+    background: var(--bg);
+}
+
+.commands-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(220px, 0.85fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.terminal {
+    min-width: 0;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    background: #0d1727;
+}
+
+.terminal .terminal-header {
+    flex-wrap: wrap;
+}
+
+.copy-btn {
+    background: #1a2a42;
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.copy-btn:hover {
+    background: #284364;
+}
+
+.terminal-header .copy-btn {
+    margin-left: 8px;
+}
+
+.command-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.command-row code {
+    color: #65d8ff;
+    font: 0.85rem "Consolas", monospace;
+    overflow-wrap: anywhere;
+}
+
+.command-row > span {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.terminal-footer {
+    padding: 13px 17px;
+    color: var(--green);
+    font: 0.8rem "Consolas", monospace;
+    min-height: 44px;
+}
+
+.tip-card {
+    padding: 27px;
+    background: linear-gradient(145deg,
+        rgba(113, 104, 255, 0.17),
+        rgba(56, 165, 255, 0.06));
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 14px;
+}
+
+.tip-icon {
+    color: var(--purple);
+    font-size: 2rem;
+}
+
+.tip-card h3 {
+    margin: 8px 0 12px;
+}
+
+.tip-card p {
+    font-size: 0.9rem;
+    margin-bottom: 22px;
+}
+
+/* ==================================
+   8. FLUJO DE TRABAJO
+================================== */
+.workflow-section {
+    background: linear-gradient(180deg, #0e192a, #080e1b);
+}
+
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.step {
+    padding: 22px 16px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    transition: transform 0.25s, background 0.25s;
+}
+
+.step:hover {
+    transform: translateY(-6px);
+    background: rgba(56, 165, 255, 0.07);
+}
+
+.step-number {
+    color: var(--blue);
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.step-icon {
+    color: var(--purple);
+    font-size: 2rem;
+    margin: 8px 0;
+}
+
+.step h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.step p {
+    font-size: 0.83rem;
+}
+
+/* ==================================
+   9. CUESTIONARIO
+================================== */
+.quiz-section {
+    background:
+        radial-gradient(ellipse at center,
+            rgba(113, 104, 255, 0.12), transparent 65%),
+        var(--bg);
+}
+
+.quiz-card {
+    max-width: 760px;
+    margin: auto;
+    padding: 38px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: #111d31;
+    text-align: center;
+}
+
+.quiz-question {
+    font-size: 1.08rem;
+    color: var(--text);
+    margin: 22px 0;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.quiz-option {
+    padding: 13px 9px;
+    color: var(--text);
+    background: #18263c;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    overflow-wrap: anywhere;
+}
+
+.quiz-option:hover:not(:disabled) {
+    border-color: var(--blue);
+    background: #203553;
+}
+
+.quiz-option.correct {
+    border-color: var(--green);
+    background: rgba(81, 226, 177, 0.12);
+}
+
+.quiz-option.incorrect {
+    border-color: var(--orange);
+    background: rgba(255, 98, 62, 0.12);
+}
+
+.quiz-option:disabled {
+    cursor: default;
+}
+
+.quiz-feedback {
+    min-height: 30px;
+    margin: 18px 0 10px;
+}
+
+.quiz-score {
+    font-size: 0.85rem;
+    margin-top: 20px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* ==================================
+   10. PIE DE PÁGINA
+================================== */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 30px 9%;
+    border-top: 1px solid var(--border);
+    background: #060b14;
+}
+
+.footer p {
+    font-size: 0.85rem;
+}
+
+.footer > a:last-child {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.footer-note {
+    width: 100%;
+    text-align: center;
+    order: 4;
+}
+
+/* ==================================
+   11. RESPONSIVE: TABLET Y MÓVIL
+================================== */
+@media (max-width: 1050px) {
+    .navbar {
+        padding-inline: 4%;
+    }
+
+    .navbar nav {
+        gap: 13px;
+    }
+
+    .hero, .section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .commands-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .header-btn {
+        display: none;
+    }
+
+    .navbar nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        padding-top: 8px;
+    }
+
+    .navbar nav.open {
+        display: flex;
+    }
+
+    .navbar nav a {
+        padding: 11px 5px;
+        border-top: 1px solid var(--border);
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
+        gap: 35px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero-visual {
+        min-height: 260px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .workflow-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .command-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .command-row > span {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .command-row .copy-btn {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-note {
+        order: initial;
+    }
+}
+
+@media (max-width: 460px) {
+    .section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-stats {
+        gap: 18px;
+    }
+
+    .info-card, .quiz-card {
+        padding: 23px 18px;
+    }
+
+    .workflow-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+
+    .terminal-body {
+        padding: 17px;
+        font-size: 0.77rem;
+    }
+
+    .command-row code {
+        font-size: 0.76rem;
+    }
+}
+
+/* Respetar la preferencia de reducir animaciones */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
