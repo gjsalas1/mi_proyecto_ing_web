@@ -1,4 +1,3 @@
-
 /* ==================================
    1. CONFIGURACIÓN GENERAL
 ================================== */
@@ -9,7 +8,7 @@
     --text: #edf3ff;
     --muted: #a5b4cc;
     --blue: #38a5ff;
-    --orange: #7eff3e;
+    --orange: #ff623e;
     --purple: #a78bfa;
     --green: #51e2b1;
     --border: rgba(169, 190, 225, 0.15);
@@ -304,7 +303,7 @@ section {
 
 .red { background: #ff6268; }
 .yellow { background: #ffca55; }
-.green { background: #1538e7; }
+.green { background: #3ddc84; }
 
 .terminal-title {
     color: var(--muted);
