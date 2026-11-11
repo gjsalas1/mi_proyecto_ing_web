@@ -1,0 +1,85 @@
+
+/* 1. Configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: hsl(210, 12%, 97%);
+    min-height: 100vh;
+}
+
+/* 2. Contenedor principal */
+.contenedor {
+    width: 90%;
+    max-width: 650px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+/* 3. Título */
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* 4. Diseño de la tarjeta */
+.tarjeta {
+    background-color: #e9efef9b;
+    padding: 50px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+    transition: background-color 0.4s ease;
+}
+
+.tarjeta h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+/* 5. Contenedor de botones */
+.botones {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* 6. Estilos generales de botones */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+/* 7. Colores de los botones */
+.azul {
+    background-color: #007bff;
+}
+
+.verde {
+    background-color: #28a745;
+}
+
+.rojo {
+    background-color: #dc3545;
+}
+
+.restablecer {
+    background-color: #555555;
+}
